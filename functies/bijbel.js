@@ -17,7 +17,7 @@ const laadBijbels = async () => {
 const bijbelsPromise = laadBijbels();
 
 const getBijbel = async (vertaling = "statenvertaling", filter = ".*") => {
-    const filterRegex = new RegExp(filter);
+    const filterRegex = new RegExp(filter, "i");
     const bijbels = await bijbelsPromise;
     return bijbels[vertaling]
         .split("\n")
